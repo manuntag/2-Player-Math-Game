@@ -15,18 +15,18 @@ int main(int argc, const char * argv[]) {
         int answer;
         int player1score = 0;
         int player2score = 0;
+        int response;
         
         char Player1Name[20];
         char Player2Name[20];
         
         BOOL gameIsOn = YES;
         
+        NSLog(@"First Player to Reach 3 points, wins!");
         
         NSLog(@"Player 1, Please Enter Your Name");
         scanf("%s", Player1Name);
        
-        
-        
         NSLog(@"Player 2, Please Enter Your Name");
         scanf("%s", Player2Name);
         
@@ -41,7 +41,6 @@ int main(int argc, const char * argv[]) {
         int sumOfRandomNumber = randomNumber1 + randomNumber2;
         
         NSLog(@" %s, What is %d + %d", Player1Name, randomNumber1, randomNumber2);
-//        waitOnCR();
         scanf("%d", &answer);
         
         if(sumOfRandomNumber == answer) {
@@ -52,7 +51,18 @@ int main(int argc, const char * argv[]) {
             
             if (player1score == 3) {
                 NSLog(@"%s, you won!", Player1Name);
-                break;
+               
+                NSLog(@"Restart Game? \n1.Yes \n2.No");
+                scanf("%d", &response);
+                if (response==1) {
+                    player1score = 0;
+                    player2score = 0;
+                }else {
+                  
+                    break;
+                    
+                }
+    
             }
             
             
@@ -82,7 +92,16 @@ int main(int argc, const char * argv[]) {
                 
                 if (player2score == 3) {
                     NSLog(@"%s, you won!", Player2Name);
-                    break;
+                
+                    NSLog(@"Restart Game? \n1.Yes \n2.No");
+                    scanf("%d", &response);
+                    if (response==1) {
+                        player1score = 0;
+                        player2score = 0;
+                    }else {
+                        
+                        break;
+                    }
                 }
             
             }else{
