@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
             
         int randomNumber1 = arc4random()%20;
         int randomNumber2 = arc4random()%20;
-    
+            
         int sumOfRandomNumber = randomNumber1 + randomNumber2;
         
         NSLog(@" %s, What is %d + %d", Player1Name, randomNumber1, randomNumber2);
